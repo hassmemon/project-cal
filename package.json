@@ -1,0 +1,29 @@
+{
+  "name": "project-cal",
+  "version": "1.0.0",
+  "description": "GA Project 3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start:test": "nodemon server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franz-net/project-cal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franz-net/project-cal/issues"
+  },
+  "homepage": "https://github.com/franz-net/project-cal#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
