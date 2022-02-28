@@ -4,6 +4,10 @@ const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
 const db = require('./database/db');
 
+// Middleware imports
+const errorHandler = require('./middleware/error_handler');
+const logger = require('./middleware/logger');
+
 // Controller imports
 const tasksController = require('./controllers/tasks');
 const usersController = require('./controllers/users');
@@ -24,6 +28,9 @@ app.use(
     })
 );
 
+if (process.env.NODE_ENV !== 'production') {
+    app.use(logger);
+}
 app.use(express.json());
 
 // Controllers
@@ -34,6 +41,8 @@ app.use('/api/sessions', sessionsController);
 app.get('/', (req, res) => {
     res.send('hello');
 });
+
+app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);

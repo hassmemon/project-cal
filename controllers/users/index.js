@@ -10,7 +10,8 @@ const router = express.Router();
 // });
 
 // Get a user
-router.get('/:id', (req, res) => {
+//Make sure only the loggin user can see him or herself
+router.get('/:id', isLoggedIn, (req, res) => {
     Users.getById(req.params.id).then((user) => {
         res.json(user);
     });
