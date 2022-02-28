@@ -16,6 +16,11 @@ const sessionsController = require('./controllers/sessions');
 const port = process.env.PORT || 3000;
 const app = express();
 
+if (process.env.NODE_ENV !== 'production') {
+    app.use(logger);
+    require('dotenv').config();
+}
+
 app.use(
     expressSession({
         store: new pgSession({
@@ -28,19 +33,14 @@ app.use(
     })
 );
 
-if (process.env.NODE_ENV !== 'production') {
-    app.use(logger);
-}
 app.use(express.json());
+
+app.use(express.static('static'));
 
 // Controllers
 app.use('/api/tasks', tasksController);
 app.use('/api/users', usersController);
 app.use('/api/sessions', sessionsController);
-
-app.get('/', (req, res) => {
-    res.send('hello');
-});
 
 app.use(errorHandler);
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const Tasks = require('../../models/tasks');
+const isLoggedIn = require('../../middleware/is_logged_in');
 const router = express.Router();
 
 // Get all tasks
