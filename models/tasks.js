@@ -25,6 +25,14 @@ const Tasks = {
         const query = `DELETE FROM tasks WHERE id = $1`;
         return db.query(query, [id]);
     },
+    update: ({ id, name, description, priority, due_date, user_id }) => {
+        const query = `UPDATE tasks SET name = $2, description = $3, priority = $4, due_date = $5, user_id = $6 WHERE id = $1 RETURNING *`;
+        return db
+            .query(query, [id, name, description, priority, due_date, user_id])
+            .then((response) => {
+                return response.rows ? response.rows[0] : {};
+            });
+    },
 };
 
 module.exports = Tasks;
