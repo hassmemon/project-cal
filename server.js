@@ -6,6 +6,7 @@ const tasksController = require('./controllers/tasks');
 
 const port = process.env.PORT || 3000;
 const app = express();
+app.use(express.json());
 
 // Controllers
 app.use('/api/tasks', tasksController);
