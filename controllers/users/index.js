@@ -22,18 +22,19 @@ router.get('/', isLoggedIn, (req, res) => {
 // Create a user
 router.post('/', (req, res) => {
     const newUser = req.body;
-    newUser.password = bcrypt.hashSync(newUser.password.toString(), bcrypt.genSaltSync());
+    newUser.password = bcrypt.hashSync(
+        newUser.password.toString(),
+        bcrypt.genSaltSync()
+    );
     Users.create(newUser).then((user) => {
         if (!user) {
             return res.status(500).json({
-                message: "Error when creating user... Please try again"
+                message: 'Error when creating user... Please try again',
             });
         }
         req.session.userId = user.id;
         req.session.email = user.email;
         res.json(user);
-    }).catch((error)=>{
-        next(error);
     });
 });
 
