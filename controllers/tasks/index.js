@@ -21,18 +21,14 @@ router.get('/:id', isLoggedIn, (req, res) => {
 router.post('/', isLoggedIn, (req, res) => {
     const newTask = req.body;
     newTask.user_id = req.session.userId;
-    Tasks.create(newTask)
-        .then((task) => {
-            if (!task) {
-                return res.status(500).json({
-                    message: 'Error when creating task... Please try again',
-                });
-            }
-            res.json(task);
-        })
-        .catch((error) => {
-            next(error);
-        });
+    Tasks.create(newTask).then((task) => {
+        if (!task) {
+            return res.status(500).json({
+                message: 'Error when creating task... Please try again',
+            });
+        }
+        res.json(task);
+    });
 });
 
 // Delete a task
