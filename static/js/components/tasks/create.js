@@ -5,7 +5,7 @@ function renderCreateForm() {
             <p>Task Name</p>
             <input type="name" name="name" required/>
             <p>Task Description:</p>
-            <textarea id="description" name="description" rows="4" required/>
+            <textarea id="description" name="description" rows="4" required></textarea>
             <p>Task Priority</p>
             <select name="priority" id="priority">
                 <option value="0">Urgent</option>
@@ -25,9 +25,9 @@ function renderCreateForm() {
 
         const nameField = document.querySelector('input[name=name]');
         const descriptionField = document.querySelector(
-            'input[name=description]'
+            'textarea[name=description]'
         );
-        const priorityField = document.querySelector('input[name=priority]');
+        const priorityField = document.querySelector('select[name=priority]');
         const dueDateField = document.querySelector('input[name=due-date]');
         const body = {
             name: nameField.value,
@@ -52,11 +52,13 @@ function renderCreateForm() {
                 .post('/api/tasks', body)
                 .then((response) => {
                     // Is a 2XX response code
-                    renderTasksList();
+                    console.log(response);
+                    renderTaskList();
                 })
                 .catch((error) => {
                     // Is a greater than 2XX response code. E.g. 422, 500 error
                     // Only runs on Error
+                    console.log(error);
                     displayError(error.response.data.message);
                 });
         } else {
