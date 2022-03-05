@@ -6,9 +6,7 @@ function renderTaskList() {
     axios.get('/api/tasks').then((response) => {
         const tasks = response.data;
         const unorderedList = document.createElement("ul")
-
         renderData(tasks, unorderedList);
-
         list.appendChild(unorderedList);
     });
 }
@@ -28,15 +26,21 @@ function renderData(tasks, parentList) {
         statusCheck.innerHTML=`Complete `;
         const checkBox = document.createElement("input");
         checkBox.setAttribute("type", "checkbox");
-        checkBox.setAttribute("id", `check-${item.id}`);
+        checkBox.setAttribute("data-task-id", `${item.id}`)
+        checkBox.setAttribute("id", `statusCheckbox`);
         if (item.status) {
             checkBox.setAttribute("checked", 'true');
         }
+        const updateBtn = document.createElement("button");
+        updateBtn.setAttribute("data-task-id", `${item.id}`);
+        updateBtn.setAttribute("id", "updateTaskBtn");
+        updateBtn.innerHTML=`Update`;
         details.appendChild(summary);
         details.appendChild(description);
         details.appendChild(dueDate);
         statusCheck.appendChild(checkBox);
         details.appendChild(statusCheck);
+        details.appendChild(updateBtn);
         itemDiv.appendChild(details);
         listItem.appendChild(itemDiv);
         parentList.appendChild(listItem);
