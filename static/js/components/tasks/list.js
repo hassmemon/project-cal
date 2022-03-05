@@ -17,7 +17,7 @@ function renderData(tasks, parentList) {
         const itemDiv = document.createElement("div");
         const details = document.createElement("details");
         const summary = document.createElement("summary");
-        summary.innerHTML=`<h2>${item.name} - Priority: ${item.priority}</h2>`
+        summary.innerHTML=`<h2>${item.name} - Priority: ${item.priority}</h2>`;
         const description = document.createElement("p");
         description.innerHTML =`${item.description}`
         const dueDate = document.createElement("p");
@@ -26,7 +26,7 @@ function renderData(tasks, parentList) {
         statusCheck.innerHTML=`Complete `;
         const checkBox = document.createElement("input");
         checkBox.setAttribute("type", "checkbox");
-        checkBox.setAttribute("data-task-id", `${item.id}`)
+        checkBox.setAttribute("data-task-id", `${item.id}`);
         checkBox.setAttribute("id", `statusCheckbox`);
         if (item.status) {
             checkBox.setAttribute("checked", 'true');
