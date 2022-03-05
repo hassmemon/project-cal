@@ -1,6 +1,8 @@
 const express = require('express');
 const Tasks = require('../../models/tasks');
 const isLoggedIn = require('../../middleware/is_logged_in');
+const taskValidator = require('./task_validator');
+const statusValidator = require('./status_validator');
 const router = express.Router();
 
 // Get all tasks
@@ -17,8 +19,19 @@ router.get('/:id', isLoggedIn, (req, res) => {
     });
 });
 
+// Toggle complete
+router.patch('/:id', isLoggedIn, statusValidator, (req, res) => {
+    Tasks.toggleComplete(
+        req.params.id,
+        req.session.userId,
+        req.body.status
+    ).then((task) => {
+        res.json(task);
+    });
+});
+
 // Create a task
-router.post('/', isLoggedIn, (req, res) => {
+router.post('/', isLoggedIn, taskValidator, (req, res) => {
     const newTask = req.body;
     newTask.user_id = req.session.userId;
     Tasks.create(newTask).then((task) => {
@@ -39,7 +52,7 @@ router.delete('/:id', isLoggedIn, (req, res) => {
 });
 
 // Update a task
-router.put('/:id', isLoggedIn, (req, res) => {
+router.put('/:id', isLoggedIn, taskValidator, (req, res) => {
     const updateTask = req.body;
     updateTask.user_id = req.session.userId;
     Tasks.update(updateTask).then((task) => {

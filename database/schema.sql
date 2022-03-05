@@ -16,5 +16,6 @@ CREATE TABLE tasks (
   description TEXT NOT NULL,
   priority INTEGER NOT NULL,
   due_date TIMESTAMP,
+  status boolean default FALSE,
   user_id INTEGER REFERENCES users(id)
 );

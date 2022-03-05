@@ -2,14 +2,8 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const Users = require('../../models/users');
 const isLoggedIn = require('../../middleware/is_logged_in');
+const userValidator = require('./user_validator');
 const router = express.Router();
-
-// Get all tasks
-// router.get('/', (req, res) => {
-//     Tasks.getAll().then((tasks) => {
-//         res.json(tasks);
-//     });
-// });
 
 // Get a user
 //Make sure only the loggin user can see him or herself
@@ -20,7 +14,7 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 // Create a user
-router.post('/', (req, res) => {
+router.post('/', userValidator, (req, res) => {
     const newUser = req.body;
     newUser.password = bcrypt.hashSync(
         newUser.password.toString(),
@@ -37,19 +31,5 @@ router.post('/', (req, res) => {
         res.json(user);
     });
 });
-
-// // Delete a task
-// router.delete('/:id', (req, res) => {
-//     Tasks.delete(req.params.id).then(() => {
-//         res.json({ status: 'ok' });
-//     });
-// });
-
-// // Update a task
-// router.put('/:id', (req, res) => {
-//     Tasks.update(req.body).then((task) => {
-//         res.json(task);
-//     });
-// });
 
 module.exports = router;
