@@ -18,6 +18,17 @@ router.get('/:id', isLoggedIn, (req, res) => {
     });
 });
 
+// Toggle complete
+router.patch('/:id', isLoggedIn, (req, res) => {
+    Tasks.toggleComplete(
+        req.params.id,
+        req.session.userId,
+        req.body.status
+    ).then((task) => {
+        res.json(task);
+    });
+});
+
 // Create a task
 router.post('/', isLoggedIn, taskValidator, (req, res) => {
     const newTask = req.body;

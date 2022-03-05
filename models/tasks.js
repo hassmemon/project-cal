@@ -1,3 +1,4 @@
+const { response } = require('express');
 const db = require('../database/db');
 
 const Tasks = {
@@ -20,6 +21,13 @@ const Tasks = {
             .then((response) => {
                 return response.rows ? response.rows[0] : {};
             });
+    },
+    toggleComplete: (id, user_id, status) => {
+        const query =
+            'Update tasks SET status = $1 WHERE id = $2 and user_id = $3 RETURNING *';
+        return db.query(query, [status, id, user_id]).then((response) => {
+            return response.rows ? response.rows[0] : {};
+        });
     },
     delete: (id, user_id) => {
         const query = `DELETE FROM tasks WHERE id = $1 and user_id = $2`;

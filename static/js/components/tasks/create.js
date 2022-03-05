@@ -13,7 +13,7 @@ function renderCreateForm() {
                 <option value="2" selected>Low</option>
             </select>
             <p>Due Date</p>
-            <input type="date" name="due-date" required/>
+            <input type="date" name="due-date" />
             <button type="submit">Create</button>
         </form>
     `;
