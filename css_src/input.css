@@ -10,3 +10,11 @@
 .error {
     @apply bg-red-100 text-red-900 border-red-200
 }
+
+.form-row {
+    @apply flex justify-between items-center flex-wrap my-1
+}
+
+.form-input {
+    @apply text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border
+}

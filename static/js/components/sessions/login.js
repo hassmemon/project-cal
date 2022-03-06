@@ -1,14 +1,22 @@
 function renderLoginForm() {
     const page = document.getElementById('page');
     page.innerHTML = `
-        <h2>Login</h2>
-        <form id="login" action="/api/sessions" method="POST">
-            <p>Email:</p>
-            <input type="text" name="email" required/>
-            <p>Password:</p>
-            <input type="password" name="password" required/>
-            <button type="submit">Login</button>
-        </form>
+        <div class="border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4">
+            <h2 class="text-5xl text-center">Login</h2>
+            <form class="mt-3" id="login" action="/api/sessions" method="POST">
+                <div class="form-row">
+                    <p>Email:</p>
+                    <input class="form-input" type="text" name="email" required/>
+                </div>
+                <div class="form-row pt-2">
+                    <p>Password:</p>
+                    <input class="form-input" type="password" name="password" required/>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="cursor-pointer focus:outline-none" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
     `;
 
     const form = document.getElementById('login');

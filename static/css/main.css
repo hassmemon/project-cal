@@ -470,6 +470,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.m-8{
+  margin: 2rem;
+}
+
+.my-8{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mt-8{
+  margin-top: 2rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
 .flex{
   display: flex;
 }
@@ -482,12 +499,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   min-height: 100vh;
 }
 
+.w-screen{
+  width: 100vw;
+}
+
+.w-3\/4{
+  width: 75%;
+}
+
 .w-4{
   width: 1rem;
 }
 
-.w-screen{
-  width: 100vw;
+.w-2\/4{
+  width: 50%;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .flex-col{
@@ -498,12 +527,36 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
-.justify-center{
-  justify-content: center;
-}
-
 .justify-between{
   justify-content: space-between;
+}
+
+.gap-5{
+  gap: 1.25rem;
+}
+
+.rounded-lg{
+  border-radius: 0.5rem;
+}
+
+.border{
+  border-width: 1px;
+}
+
+.p-4{
+  padding: 1rem;
+}
+
+.pt-8{
+  padding-top: 2rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .font-body{
@@ -512,6 +565,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .text-8xl{
   font-size: 6rem;
+  line-height: 1;
+}
+
+.text-5xl{
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -537,4 +595,43 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(127 29 29 / var(--tw-text-opacity));
+}
+
+.form-row{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-input{
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  align-items: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  padding-left: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.form-input:focus{
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(67 56 202 / var(--tw-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
