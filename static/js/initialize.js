@@ -6,7 +6,7 @@ renderAppWithSession();
 
 function renderAppWithoutSession() {
     renderHeader();
-    // renderLandingPage();
+    renderLandingPage();
 }
 
 function renderAppWithSession() {

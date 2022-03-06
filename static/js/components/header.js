@@ -1,7 +1,7 @@
 function renderHeader(session = {}) {
     const header = document.querySelector('#header-nav');
     header.innerHTML = `
-        <h1>Calendar</h1>
+        <h1 class="text-8xl">Calendar</h1>
     `;
     if (session.email) {
         header.innerHTML += `

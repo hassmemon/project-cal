@@ -14,7 +14,6 @@ function renderLoginForm() {
     const form = document.getElementById('login');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        clearErrors();
 
         const emailField = document.querySelector('input[name=email]');
         const passwordField = document.querySelector('input[name=password]');
