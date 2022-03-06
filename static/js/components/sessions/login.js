@@ -1,7 +1,7 @@
 function renderLoginForm() {
     const page = document.getElementById('page');
     page.innerHTML = `
-        <div class="border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4">
+        <div class="form-container">
             <h2 class="text-5xl text-center">Login</h2>
             <form class="mt-3" id="login" action="/api/sessions" method="POST">
                 <div class="form-row">

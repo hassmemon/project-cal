@@ -1,15 +1,24 @@
 function renderSignupForm() {
     const page = document.getElementById('page');
     page.innerHTML = `
-        <h2>Sign up</h2>
-        <form id="signup" action="/api/users" method="POST">
-            <p>Name:</p>
-            <input type="text" name="name" required/>
-            <p>Email:</p>
-            <input type="text" name="email" required/>
-            <p>Password:</p>
-            <input type="password" name="password" required/>
-            <button type="submit">Sign up</button>
+        <div class="form-container">
+            <h2 class="text-5xl text-center">Sign up</h2>
+            <form class="mt-3" id="signup" action="/api/users" method="POST">
+                <div class="form-row">
+                    <p>Name:</p>
+                    <input class="form-input" type="text" name="name" required/>
+                </div>
+                <div class="form-row">
+                    <p>Email:</p>
+                    <input class="form-input" type="text" name="email" required/>
+                </div>
+                <div class="form-row">
+                    <p>Password:</p>
+                    <input class="form-input" type="password" name="password" required/>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-blue" type="submit">Sign up</button>
+                </div>
         </form>
     `;
 

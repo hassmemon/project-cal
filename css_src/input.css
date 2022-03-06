@@ -11,6 +11,10 @@
     @apply bg-red-100 text-red-900 border-red-200
 }
 
+.form-container {
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg
+}
+
 .form-row {
     @apply flex justify-between items-center flex-wrap my-1
 }
