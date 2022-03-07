@@ -15,6 +15,8 @@ function renderAppWithSession() {
         console.log(`I have a ${session}`);
         renderHeader(session);
         renderTaskList();
+    }).catch((error)=>{
+        console.log(`${error}`);
     });
 }
 //the password is password
