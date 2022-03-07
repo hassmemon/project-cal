@@ -6,7 +6,7 @@ function renderLoginForm() {
             <form class="mt-3" id="login" action="/api/sessions" method="POST">
                 <div class="form-row">
                     <p>Email:</p>
-                    <input class="form-input" type="text" name="email" required/>
+                    <input class="form-input" type="email" name="email" required/>
                 </div>
                 <div class="form-row pt-2">
                     <p>Password:</p>

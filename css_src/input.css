@@ -4,26 +4,27 @@
 @tailwind utilities;
 
 .alert {
-    @apply py-3 px-5 mb-4  text-sm rounded-md border flex items-center justify-between
+    @apply py-3 pl-5 pr-2 mb-4  text-sm rounded-md border flex items-center justify-evenly z-50 absolute top-10 h-10 w-auto shadow-red-400 shadow-lg
 }
 
 .error {
     @apply bg-red-100 text-red-900 border-red-200
 }
 
-.form-container {
-    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg bg-floral_white/[.10]
+.modal {
+    @apply fixed z-30 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7] backdrop-blur-sm
 }
+
+.form-container {
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow shadow-floral_white bg-floral_white/[.10] backdrop-blur-sm
+}
+
 .form-trans-solid {
     @apply bg-jet/[0.8]
 }
 
 .form-row {
     @apply flex justify-between items-center flex-wrap my-1
-}
-
-.modal {
-    @apply fixed z-30 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7]
 }
 
 .form-input {
