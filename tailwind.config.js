@@ -4,6 +4,7 @@ module.exports = {
         extend: {
             colors: {
                 cg_blue: '#227c9d',
+                cerulean_crayola: '#36a9d3',
                 tiffany_blue: '#17c3b2',
                 caribbean_green: '#1adb9e',
                 max_yellow_red: '#ffcb77',

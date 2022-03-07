@@ -4,7 +4,7 @@ function renderHeader(session = {}) {
 
     const title = document.createElement('a');
     title.href = '/';
-    title.innerHTML=`<h1 class="text-8xl">Project-Cal</h1>`;
+    title.innerHTML=`<h1 class="text-8xl">U-Did-it!</h1>`;
 
     header.appendChild(title);
 

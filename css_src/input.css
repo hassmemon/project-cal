@@ -20,7 +20,11 @@
 }
 
 .form-input {
-    @apply text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border
+    @apply text-gray-600 focus:outline-none focus:border focus:border-light_coral font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border
+}
+
+.form-select {
+    @apply text-gray-600 bg-white focus:outline-none focus:border focus:border-light_coral font-normal h-10 w-full flex items-center pl-3 text-sm border-gray-300 rounded border
 }
 
 .btn {
@@ -32,5 +36,5 @@
 }
 
 .btn-blue {
-    @apply bg-blue-500 text-white hover:bg-blue-700
+    @apply bg-cg_blue text-white hover:bg-cerulean_crayola
 }
