@@ -1,7 +1,8 @@
 function renderCreateForm() {
     const page = document.getElementById('page');
-    page.innerHTML = `
-        <div class="form-container">
+    page.innerHTML += `
+    <div class="fixed z-50 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7]">
+    <div class="form-container form-trans-solid">
             <h2 class="text-5xl text-center">Create New Task</h2>
             <form class="mt-3" id="createTask" action="/api/tasks" method="POST">
                 <div class="form-row">
@@ -26,8 +27,10 @@ function renderCreateForm() {
                 </div>
                 <div class="text-center mt-3">
                     <button class="btn btn-sqr btn-blue" type="submit">Create Task</button>
+                    <button class="btn btn-sqr btn-blue" type="button" onClick="this.parentElement.parentElement.parentElement.parentElement.remove();">Cancel Create</button>
                 </div>
             </form>
+        </div>
         </div>
     `;
 
@@ -79,3 +82,7 @@ function renderCreateForm() {
         }
     });
 }
+
+// function cancelCreate(){
+
+// }

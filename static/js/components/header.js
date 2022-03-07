@@ -10,19 +10,17 @@ function renderHeader(session = {}) {
 
     if (session.email) {
         header.innerHTML += `
-        <ul id="navlist">
-            <li onClick="renderCreateForm()">Create Task</li>
-            <li onClick="renderTaskList()">Tasks</li>
-            <li>Welcome, ${session.email}.</li>
-            <li onClick="logout()">Logout</li>
-        </ul>
+        <div class="flex w-full justify-evenly items-center mt-6 mb-4 " id="navlist" >
+            <p>Welcome, <span class="text-max_yellow_red">${session.email}.</span></p>
+            <span class="btn btn-pill btn-pink" onClick="logout()">Logout</span>
+        </div>
         `;
     } else {
         header.innerHTML += `
-        <ul id="navlist">
-            <li onClick="renderSignupForm()">Sign up</li>
-            <li onClick="renderLoginForm()">Login</li>
-        </ul>
+        <div class="flex w-full justify-center gap-x-14 mt-6 mb-4 " id="navlist" >
+            <span class="btn btn-pill btn-pink" onClick="renderSignupForm()">Sign up</span>
+            <span class="btn btn-pill btn-pink" onClick="renderLoginForm()">Login</span>
+        </div>
         `;
     }
 }

@@ -12,7 +12,8 @@ module.exports = {
                 light_coral: '#fe6d73',
                 flickr_pink: '#ed217c',
                 english_violet: '#413c58',
-                jet: '#323031'
+                jet: '#323031',
+                light_pink: '#f7a1c8'
             },
             fontFamily: {
                 body: ['Nunito']
