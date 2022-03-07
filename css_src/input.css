@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.alert {
+    @apply py-3 px-5 mb-4  text-sm rounded-md border flex items-center justify-between
+}
+
+.error {
+    @apply bg-red-100 text-red-900 border-red-200
+}
+
+.form-container {
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg
+}
+
+.form-row {
+    @apply flex justify-between items-center flex-wrap my-1
+}
+
+.form-input {
+    @apply text-gray-600 focus:outline-none focus:border focus:border-light_coral font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border
+}
+
+.form-select {
+    @apply text-gray-600 bg-white focus:outline-none focus:border focus:border-light_coral font-normal h-10 w-full flex items-center pl-3 text-sm border-gray-300 rounded border
+}
+
+.btn {
+    @apply cursor-pointer focus:outline-none font-medium
+}
+
+.btn-sqr {
+    @apply px-4 py-2 rounded-md text-xl transition duration-300
+}
+
+.btn-blue {
+    @apply bg-cg_blue text-white hover:bg-cerulean_crayola
+}

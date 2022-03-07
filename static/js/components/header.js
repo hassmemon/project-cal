@@ -1,8 +1,13 @@
 function renderHeader(session = {}) {
     const header = document.querySelector('#header-nav');
-    header.innerHTML = `
-        <h1>Calendar</h1>
-    `;
+    header.innerHTML = '';
+
+    const title = document.createElement('a');
+    title.href = '/';
+    title.innerHTML=`<h1 class="text-8xl">U-Did-it!</h1>`;
+
+    header.appendChild(title);
+
     if (session.email) {
         header.innerHTML += `
         <ul id="navlist">

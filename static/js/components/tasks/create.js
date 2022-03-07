@@ -1,21 +1,34 @@
 function renderCreateForm() {
     const page = document.getElementById('page');
     page.innerHTML = `
-        <form id="createTask" action="/api/tasks" method="POST">
-            <p>Task Name</p>
-            <input type="name" name="name" required/>
-            <p>Task Description:</p>
-            <textarea id="description" name="description" rows="4" required></textarea>
-            <p>Task Priority</p>
-            <select name="priority" id="priority">
-                <option value="0">Urgent</option>
-                <option value="1">Medium</option>
-                <option value="2" selected>Low</option>
-            </select>
-            <p>Due Date</p>
-            <input type="date" name="due-date" />
-            <button type="submit">Create</button>
-        </form>
+        <div class="form-container">
+            <h2 class="text-5xl text-center">Create New Task</h2>
+            <form class="mt-3" id="createTask" action="/api/tasks" method="POST">
+                <div class="form-row">
+                    <p>Task Name</p>
+                    <input class="form-input" type="name" name="name" required/>
+                </div>
+                <div class="form-row">
+                    <p>Task Description:</p>
+                    <textarea class="form-input" id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-row">
+                    <p>Task Priority</p>
+                    <select class="form-select" name="priority" id="priority">
+                        <option class="bg-light_coral hover:none" value="1">Urgent</option>
+                        <option class="bg-max_yellow_red" value="2">Medium</option>
+                        <option class="bg-cg_blue" value="3" selected>Low</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <p>Due Date</p>
+                    <input class="form-input" type="date" name="due-date" />
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-sqr btn-blue" type="submit">Create Task</button>
+                </div>
+            </form>
+        </div>
     `;
 
     const form = document.getElementById('createTask');

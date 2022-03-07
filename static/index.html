@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project-Cal</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script defer src="./js/initialize.js"></script>
     <script defer src="./js/display-error.js"></script>
     <script src="./js/components/header.js"></script>
+    <script src="./js/components/landing_page.js"></script>
     <script src="./js/components/users/create.js"></script>
     <script src="./js/components/tasks/create.js"></script>
     <script src="./js/components/tasks/list.js"></script>
@@ -20,9 +22,13 @@
     <script src="./js/components/sessions/logout.js"></script>
 </head>
 
-<body>
-    <header id="header-nav"></header>
-    <section id="page">
-    </section>
+<body class="font-body min-h-screen w-screen bg-jet text-floral_white">
+    <main class="flex flex-col justify-between items-center h-full pt-8">
+        <header class="" id="header-nav"></header>
+        <section class="flex flex-col justify-between items-center mt-8 w-3/4 flex-grow md:flex-grow-0" id="page"></section>
+    </main>
+    <footer class="flex justify-center items-center sticky top-[100vh]">
+        <p>Created with &hearts; by Shatgul, Maurice, Hassan and Franz</p>
+    </footer>
 </body>
 </html>
