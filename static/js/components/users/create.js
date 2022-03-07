@@ -25,7 +25,6 @@ function renderSignupForm() {
     const form = document.getElementById('signup');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        clearErrors();
 
         const nameField = document.querySelector('input[name=name]');
         const emailField = document.querySelector('input[name=email]');
