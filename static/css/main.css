@@ -542,12 +542,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
-.w-2\/3{
-  width: 66.666667%;
-}
-
 .w-full{
   width: 100%;
+}
+
+.w-2\/3{
+  width: 66.666667%;
 }
 
 .flex-grow{
@@ -574,24 +574,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
-.justify-around{
-  justify-content: space-around;
-}
-
 .justify-evenly{
   justify-content: space-evenly;
-}
-
-.gap-5{
-  gap: 1.25rem;
-}
-
-.gap-9{
-  gap: 2.25rem;
-}
-
-.gap-14{
-  gap: 3.5rem;
 }
 
 .gap-x-14{
@@ -628,6 +612,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-cg_blue{
   --tw-bg-opacity: 1;
   background-color: rgb(34 124 157 / var(--tw-bg-opacity));
+}
+
+.bg-jet{
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 48 49 / var(--tw-bg-opacity));
 }
 
 .bg-waves{

@@ -37,7 +37,6 @@ function renderCreateForm() {
     const form = document.getElementById('createTask');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        clearErrors();
 
         const nameField = document.querySelector('input[name=name]');
         const descriptionField = document.querySelector(
