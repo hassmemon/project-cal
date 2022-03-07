@@ -13,7 +13,7 @@ function renderLoginForm() {
                     <input class="form-input" type="password" name="password" required/>
                 </div>
                 <div class="text-center mt-3">
-                    <button class="btn btn-blue" type="submit">Login</button>
+                    <button class="btn btn-sqr btn-blue" type="submit">Login</button>
                 </div>
             </form>
         </div>

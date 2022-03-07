@@ -2,6 +2,9 @@ function renderTaskList() {
     const page = document.getElementById('page');
     const list = document.createElement('div');
     page.replaceChildren(list);
+    list.innerHTML=`
+        <h2 class="text-3xl text-center">My List</h2>
+    `;
 
     axios.get('/api/tasks').then((response) => {
         const tasks = response.data;
@@ -17,12 +20,14 @@ function renderData(tasks, parentList) {
         const listItem = document.createElement('li');
         const itemDiv = document.createElement('div');
         const details = document.createElement('details');
+        details.classList.add("border", "rounded", "m-1", "p-4", "shadow-md");
         const summary = document.createElement('summary');
+        summary.classList.add("list-none", "text-xl", "border-b-4");
         summary.innerHTML = `<h2>${item.name} - Priority: ${item.priority}</h2>`;
         const description = document.createElement('p');
         description.innerHTML = `${item.description}`;
         const dueDate = document.createElement('p');
-        dueDate.innerHTML = `${item.due_date}`;
+        dueDate.innerHTML = `Task due: ${item.due_date}`;
         const statusCheck = document.createElement('p');
         statusCheck.innerHTML = `Complete `;
         const checkBox = document.createElement('input');

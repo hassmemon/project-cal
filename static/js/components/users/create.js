@@ -17,7 +17,7 @@ function renderSignupForm() {
                     <input class="form-input" type="password" name="password" required/>
                 </div>
                 <div class="text-center mt-3">
-                    <button class="btn btn-blue" type="submit">Sign up</button>
+                    <button class="btn btn-sqr btn-blue" type="submit">Sign up</button>
                 </div>
         </form>
     `;

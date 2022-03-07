@@ -6,6 +6,4 @@ function renderLandingPage(){
         <h1>Never forget about a task again!</h1>
     </div>
     `;
-
-    page.appendChild(contentDiv);
 }

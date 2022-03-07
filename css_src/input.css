@@ -24,7 +24,11 @@
 }
 
 .btn {
-    @apply cursor-pointer focus:outline-none px-4 py-2 rounded-md text-xl font-medium  transition duration-300
+    @apply cursor-pointer focus:outline-none font-medium
+}
+
+.btn-sqr {
+    @apply px-4 py-2 rounded-md text-xl transition duration-300
 }
 
 .btn-blue {
