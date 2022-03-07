@@ -5,12 +5,14 @@ renderAppWithoutSession(); // Or render a loading spinner
 renderAppWithSession();
 
 function renderAppWithoutSession() {
+    console.log('no session');
     renderHeader();
     renderLandingPage();
 }
 
 function renderAppWithSession() {
     getSession().then((session) => {
+        console.log(`I have a ${session}`);
         renderHeader(session);
         renderTaskList();
     });

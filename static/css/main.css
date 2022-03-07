@@ -475,10 +475,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: sticky;
 }
 
-.top-full{
-  top: 100%;
-}
-
 .top-\[100vh\]{
   top: 100vh;
 }
@@ -519,6 +515,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1rem;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .flex-grow{
   flex-grow: 1;
 }
@@ -543,8 +543,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 }
 
-.rounded{
-  border-radius: 0.25rem;
+.rounded-lg{
+  border-radius: 0.5rem;
 }
 
 .border{
@@ -555,20 +555,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 4px;
 }
 
-.p-1{
-  padding: 0.25rem;
+.bg-floral_white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 239 / var(--tw-bg-opacity));
+}
+
+.bg-jet{
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 48 49 / var(--tw-bg-opacity));
 }
 
 .p-4{
   padding: 1rem;
 }
 
-.pt-2{
-  padding-top: 0.5rem;
-}
-
 .pt-8{
   padding-top: 2rem;
+}
+
+.pt-2{
+  padding-top: 0.5rem;
 }
 
 .text-center{
@@ -589,14 +595,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1;
 }
 
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-floral_white{
+  --tw-text-opacity: 1;
+  color: rgb(254 249 239 / var(--tw-text-opacity));
+}
+
+.text-light_coral{
+  --tw-text-opacity: 1;
+  color: rgb(254 109 115 / var(--tw-text-opacity));
 }
 
 .shadow-md{

@@ -1,8 +1,7 @@
 function displayError(errorText) {
     const page = document.getElementById('page');
     const divError = document.createElement('div');
-    divError.classList.add('error');
-    divError.classList.add('alert');
+    divError.classList.add('error', 'alert');
     divError.setAttribute('role', 'alert');
     const errorMessage = document.createElement('span');
     errorMessage.innerText = errorText;
