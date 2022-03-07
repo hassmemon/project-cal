@@ -1,7 +1,7 @@
 function renderCreateForm() {
     const page = document.getElementById('page');
     page.innerHTML += `
-    <div class="fixed z-50 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7]">
+    <div class="modal">
     <div class="form-container form-trans-solid">
             <h2 class="text-5xl text-center">Create New Task</h2>
             <form class="mt-3" id="createTask" action="/api/tasks" method="POST">
