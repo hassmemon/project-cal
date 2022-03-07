@@ -12,7 +12,10 @@
 }
 
 .form-container {
-    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg bg-floral_white/[.10]
+}
+.form-trans-solid {
+    @apply bg-jet/[0.8]
 }
 
 .form-row {
@@ -37,4 +40,12 @@
 
 .btn-blue {
     @apply bg-cg_blue text-white hover:bg-cerulean_crayola
+}
+
+.btn-pill {
+    @apply px-4 py-2 rounded-full text-xl transition duration-300
+}
+
+.btn-pink {
+    @apply bg-flickr_pink text-white hover:bg-light_pink hover:text-english_violet
 }
