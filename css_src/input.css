@@ -12,7 +12,7 @@
 }
 
 .form-container {
-    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow-lg bg-floral_white/[.10]
 }
 
 .form-row {

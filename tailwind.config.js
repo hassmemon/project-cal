@@ -16,6 +16,9 @@ module.exports = {
             },
             fontFamily: {
                 body: ['Nunito']
+            },
+            backgroundImage: {
+                waves: "url('/css/background.svg')"
             }
         },
     },
