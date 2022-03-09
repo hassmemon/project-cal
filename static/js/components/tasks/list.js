@@ -51,8 +51,8 @@ function renderData(tasks, parentList) {
         description.innerHTML = `${item.description}`;
         const dueDate = document.createElement('p');
         dueDate.innerHTML = `Task due: ${moment(item.due_date).format("dddd, MMMM Do YYYY")}`;
-        const statusCheck = document.createElement('p');
-        statusCheck.innerHTML = `Complete `;
+        const statusCheck = document.createElement('span');
+        statusCheck.innerHTML = `Done? `;
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
         checkBox.setAttribute('data-task-id', `${item.id}`);
@@ -67,8 +67,8 @@ function renderData(tasks, parentList) {
         details.appendChild(summary);
         taskDetails.appendChild(description);
         taskDetails.appendChild(dueDate);
-        taskDetails.appendChild(checkBox);
         taskDetails.appendChild(statusCheck);
+        statusCheck.appendChild(checkBox);
         infoContainer.appendChild(taskDetails);
         infoContainer.appendChild(updateBtn);
         details.appendChild(infoContainer);
