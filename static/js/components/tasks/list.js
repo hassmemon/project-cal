@@ -7,7 +7,7 @@ function renderTaskList() {
         <h2 class="text-3xl text-center">My Tasks!</h2>
         <button id="newTask" onClick="renderCreateForm()">Create New</button>
     `;
-
+    //<button id="updateTask" onClick="renderUpdateForm()">Test</button>
     axios.get('/api/tasks').then((response) => {
         const tasks = response.data;
         const unorderedList = document.createElement('ul');
@@ -42,6 +42,10 @@ function renderData(tasks, parentList) {
         const updateBtn = document.createElement('button');
         updateBtn.setAttribute('data-task-id', `${item.id}`);
         updateBtn.setAttribute('class', 'updateTaskBtn');
+        updateBtn.addEventListener('click', (e)=>{
+            renderUpdateForm(item.id);
+        });
+        
         updateBtn.innerHTML = `Update`;
         details.appendChild(summary);
         details.appendChild(description);
