@@ -486,13 +486,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 2.5rem;
 }
 
-.inset-0{
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
 .top-\[100vh\]{
   top: 100vh;
 }
@@ -521,6 +514,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.75rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -531,6 +528,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-10{
   height: 2.5rem;
+}
+
+.h-5{
+  height: 1.25rem;
 }
 
 .min-h-screen{
@@ -555,6 +556,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-2\/3{
   width: 66.666667%;
+}
+
+.w-5{
+  width: 1.25rem;
 }
 
 .flex-grow{
@@ -686,18 +691,28 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .alert{
+  position: absolute;
+  top: 2.5rem;
+  z-index: 50;
   margin-bottom: 1rem;
   display: flex;
+  height: 2.5rem;
+  width: auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-radius: 0.375rem;
   border-width: 1px;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-right: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #f87171;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .error{
@@ -707,34 +722,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(127 29 29 / var(--tw-text-opacity));
-}
-
-.form-container{
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.25rem;
-  border-radius: 0.5rem;
-  border-width: 1px;
-  background-color: rgb(254 249 239 / .10);
-  padding: 1rem;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.form-trans-solid{
-  background-color: rgb(50 48 49 / 0.8);
-}
-
-.form-row{
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .modal{
@@ -750,6 +737,42 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
   justify-content: center;
   background-color: rgb(65 60 88 / 0.7);
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.form-container{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  background-color: rgb(254 249 239 / .10);
+  padding: 1rem;
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #fef9ef;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.form-trans-solid{
+  background-color: rgb(50 48 49 / 0.8);
+}
+
+.form-row{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form-input{

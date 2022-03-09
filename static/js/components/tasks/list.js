@@ -4,11 +4,9 @@ function renderTaskList() {
     list.classList.add('w-2/3');
     page.replaceChildren(list);
     list.innerHTML=`
-        <h2 class="text-3xl text-center">My List</h2>
+        <h2 class="text-3xl text-center">My Tasks!</h2>
         <button id="newTask" onClick="renderCreateForm()">Create New</button>
     `;
-
-
 
     axios.get('/api/tasks').then((response) => {
         const tasks = response.data;

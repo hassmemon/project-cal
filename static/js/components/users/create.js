@@ -10,7 +10,7 @@ function renderSignupForm() {
                 </div>
                 <div class="form-row">
                     <p>Email:</p>
-                    <input class="form-input" type="text" name="email" required/>
+                    <input class="form-input" type="email" name="email" required/>
                 </div>
                 <div class="form-row">
                     <p>Password:</p>

@@ -1,7 +1,8 @@
 function renderCreateForm() {
     const page = document.getElementById('page');
-    page.innerHTML += `
-    <div class="modal">
+    const modalDiv = document.createElement('div');
+    modalDiv.classList.add('modal');
+    modalDiv.innerHTML = `
     <div class="form-container form-trans-solid">
             <h2 class="text-5xl text-center">Create New Task</h2>
             <form class="mt-3" id="createTask" action="/api/tasks" method="POST">
@@ -23,16 +24,22 @@ function renderCreateForm() {
                 </div>
                 <div class="form-row">
                     <p>Due Date</p>
-                    <input class="form-input" type="date" name="due-date" />
+                    <input class="form-input" type="date" name="due-date" required/>
                 </div>
                 <div class="text-center mt-3">
                     <button class="btn btn-sqr btn-blue" type="submit">Create Task</button>
-                    <button class="btn btn-sqr btn-blue" type="button" onClick="this.parentElement.parentElement.parentElement.parentElement.remove();">Cancel Create</button>
+                    <button id="addTaskModalClose" class="btn btn-sqr btn-blue" type="button" >Cancel Create</button>
                 </div>
             </form>
         </div>
-        </div>
     `;
+
+    page.appendChild(modalDiv);
+
+    const closeModalBtn = document.querySelector('#addTaskModalClose');
+    closeModalBtn.addEventListener('click',(e)=>{
+        modalDiv.remove();
+    });
 
     const form = document.getElementById('createTask');
     form.addEventListener('submit', (event) => {
@@ -58,7 +65,7 @@ function renderCreateForm() {
             error = 'Description is required';
         } else if (body.priority === '') {
             error = 'Priority is required';
-        } else if (body.dueDate === '') {
+        } else if (body.priority === 1 && body.dueDate === '') {
             error = 'Due date is required';
         }
 
@@ -81,7 +88,3 @@ function renderCreateForm() {
         }
     });
 }
-
-// function cancelCreate(){
-
-// }
