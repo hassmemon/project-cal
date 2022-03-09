@@ -3,7 +3,7 @@ const db = require('../database/db');
 
 const Tasks = {
     getAll: (user_id) => {
-        const query = 'SELECT * FROM tasks WHERE user_id = $1';
+        const query = 'SELECT * FROM tasks WHERE user_id = $1 order by priority asc';
         return db.query(query, [user_id]).then((response) => {
             return response.rows;
         });
