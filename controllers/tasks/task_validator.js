@@ -19,9 +19,9 @@ const taskValidator = (req, res, next) => {
             message: 'Priority must be between 1 and 3',
         });
     }
-    if (req.body.priority === 1 && (req.body.dueDate === null || req.body.dueDate === "")) {
+    if (!req.body.dueDate) {
         return res.status(400).json({
-            message: 'Date is required for urgent tasks',
+            message: 'Due date is required',
         });
     }
     next();

@@ -24,7 +24,7 @@ function renderCreateForm() {
                 </div>
                 <div class="form-row">
                     <p>Due Date</p>
-                    <input class="form-input" type="date" name="due-date" />
+                    <input class="form-input" type="date" name="due-date" required/>
                 </div>
                 <div class="text-center mt-3">
                     <button class="btn btn-sqr btn-blue" type="submit">Create Task</button>
