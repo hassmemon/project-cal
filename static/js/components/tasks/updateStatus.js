@@ -10,7 +10,7 @@ function updateStatus() {
             };
             const id = event.target.dataset.taskId;
             axios.patch(`/api/tasks/${id}`, body).then((response) => {
-                console.log(response);
+                renderTaskList();
             });
         });
     });

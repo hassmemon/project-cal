@@ -43,14 +43,30 @@
     @apply px-4 py-2 rounded-md text-xl transition duration-300
 }
 
-.btn-blue {
-    @apply bg-cg_blue text-white hover:bg-cerulean_crayola
-}
-
 .btn-pill {
-    @apply px-4 py-2 rounded-full text-xl transition duration-300
+    @apply px-4 py-2 rounded-full text-sm transition duration-300
 }
 
 .btn-pink {
     @apply bg-flickr_pink text-white hover:bg-light_pink hover:text-english_violet
+}
+
+.btn-blue {
+    @apply bg-cg_blue text-white hover:bg-cerulean_crayola
+}
+
+.btn-yellow {
+    @apply bg-max_yellow_red text-english_violet hover:bg-floral_white
+}
+
+.btn-english_violet {
+    @apply bg-english_violet text-floral_white hover:bg-dark_blue_gray
+}
+
+.card {
+    @apply border rounded-lg m-1 p-4 shadow-md backdrop-blur-lg
+}
+
+.card-title {
+    @apply list-none text-xl cursor-pointer mb-2 text-center uppercase font-bold
 }

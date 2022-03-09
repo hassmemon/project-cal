@@ -20,16 +20,28 @@ router.post('/', userValidator, (req, res) => {
         newUser.password.toString(),
         bcrypt.genSaltSync()
     );
-    Users.create(newUser).then((user) => {
-        if (!user) {
-            return res.status(500).json({
-                message: 'Error when creating user... Please try again',
-            });
-        }
-        req.session.userId = user.id;
-        req.session.email = user.email;
-        res.json(user);
-    });
+    Users.create(newUser)
+        .then((user) => {
+            if (!user) {
+                return res.status(500).json({
+                    message: 'Error when creating user... Please try again',
+                });
+            }
+            req.session.userId = user.id;
+            req.session.email = user.email;
+            res.json(user);
+        })
+        .catch((error) => {
+            if (error.code == '23505') {
+                return res.status(500).json({
+                    message: 'Error 20: cannot create user. Please try again',
+                });
+            } else {
+                return res.status(500).json({
+                    message: `Error: ${error.code}`,
+                });
+            }
+        });
 });
 
 module.exports = router;
