@@ -470,36 +470,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.absolute{
-  position: absolute;
-}
-
 .sticky{
   position: -webkit-sticky;
   position: sticky;
-}
-
-.inset-10{
-  top: 2.5rem;
-  right: 2.5rem;
-  bottom: 2.5rem;
-  left: 2.5rem;
 }
 
 .top-\[100vh\]{
   top: 100vh;
 }
 
-.z-50{
-  z-index: 50;
-}
-
-.m-1{
-  margin: 0.25rem;
-}
-
 .mt-8{
   margin-top: 2rem;
+}
+
+.mr-2{
+  margin-right: 0.5rem;
 }
 
 .mt-6{
@@ -514,8 +499,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.75rem;
 }
 
-.mr-2{
-  margin-right: 0.5rem;
+.ml-2{
+  margin-left: 0.5rem;
 }
 
 .flex{
@@ -526,12 +511,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
-.h-10{
-  height: 2.5rem;
-}
-
 .h-5{
   height: 1.25rem;
+}
+
+.h-6{
+  height: 1.5rem;
 }
 
 .min-h-screen{
@@ -546,6 +531,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 75%;
 }
 
+.w-5{
+  width: 1.25rem;
+}
+
 .w-4{
   width: 1rem;
 }
@@ -558,16 +547,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 66.666667%;
 }
 
-.w-5{
-  width: 1.25rem;
+.w-6{
+  width: 1.5rem;
 }
 
 .flex-grow{
   flex-grow: 1;
-}
-
-.list-none{
-  list-style-type: none;
 }
 
 .flex-col{
@@ -595,18 +580,6 @@ Ensure the default browser behavior of the `hidden` attribute.
        column-gap: 3.5rem;
 }
 
-.rounded-lg{
-  border-radius: 0.5rem;
-}
-
-.border{
-  border-width: 1px;
-}
-
-.border-b-4{
-  border-bottom-width: 4px;
-}
-
 .bg-light_coral{
   --tw-bg-opacity: 1;
   background-color: rgb(254 109 115 / var(--tw-bg-opacity));
@@ -622,6 +595,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(34 124 157 / var(--tw-bg-opacity));
 }
 
+.bg-light_coral\/\[0\.5\]{
+  background-color: rgb(254 109 115 / 0.5);
+}
+
+.bg-max_yellow_red\/\[0\.5\]{
+  background-color: rgb(255 203 119 / 0.5);
+}
+
+.bg-caribbean_green\/\[0\.5\]{
+  background-color: rgb(26 219 158 / 0.5);
+}
+
 .bg-waves{
   background-image: url('/css/background.svg');
 }
@@ -632,10 +617,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-no-repeat{
   background-repeat: no-repeat;
-}
-
-.p-4{
-  padding: 1rem;
 }
 
 .pt-8{
@@ -669,11 +650,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
 }
 
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .text-floral_white{
   --tw-text-opacity: 1;
   color: rgb(254 249 239 / var(--tw-text-opacity));
@@ -682,12 +658,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-max_yellow_red{
   --tw-text-opacity: 1;
   color: rgb(255 203 119 / var(--tw-text-opacity));
-}
-
-.shadow-md{
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .alert{
@@ -852,26 +822,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 300ms;
 }
 
-.btn-blue{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 124 157 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.btn-blue:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(54 169 211 / var(--tw-bg-opacity));
-}
-
 .btn-pill{
   border-radius: 9999px;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -891,6 +849,66 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(247 161 200 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(65 60 88 / var(--tw-text-opacity));
+}
+
+.btn-blue{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 124 157 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-blue:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(54 169 211 / var(--tw-bg-opacity));
+}
+
+.btn-yellow{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 203 119 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(65 60 88 / var(--tw-text-opacity));
+}
+
+.btn-yellow:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 249 239 / var(--tw-bg-opacity));
+}
+
+.btn-english_violet{
+  --tw-bg-opacity: 1;
+  background-color: rgb(65 60 88 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(254 249 239 / var(--tw-text-opacity));
+}
+
+.btn-english_violet:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 91 134 / var(--tw-bg-opacity));
+}
+
+.card{
+  margin: 0.25rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  padding: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-backdrop-blur: blur(16px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.card-title{
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  list-style-type: none;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px){

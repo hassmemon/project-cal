@@ -13,7 +13,8 @@ module.exports = {
                 flickr_pink: '#ed217c',
                 english_violet: '#413c58',
                 jet: '#323031',
-                light_pink: '#f7a1c8'
+                light_pink: '#f7a1c8',
+                dark_blue_gray: '#635b86'
             },
             fontFamily: {
                 body: ['Nunito']

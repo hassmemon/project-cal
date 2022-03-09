@@ -26,6 +26,9 @@ const Users = {
                 return response.rows && response.rows.length > 0
                     ? response.rows[0]
                     : null;
+            })
+            .catch((error) => {
+                throw error;
             });
     },
 };

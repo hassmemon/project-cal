@@ -1,3 +1,5 @@
+const Users = require('../../models/users');
+
 const userValidator = (req, res, next) => {
     if (!req.body.email) {
         return res.status(400).json({
@@ -13,6 +15,9 @@ const userValidator = (req, res, next) => {
         return res.status(400).json({
             message: 'Password must be longer than 3 characters',
         });
+    }
+    if (Users.getByEmail(req.body.email) == '') {
+        return res.status(400).json({ message: 'Email already exists' });
     }
     next();
 };
