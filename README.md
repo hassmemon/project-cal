@@ -48,6 +48,7 @@ The goal is to have a simple inviting UI where users can quickly navigate throug
 ## Database Diagram
 
 ![DDL diagram](ddl.png "ddl.png")
+![Wireframe](wireframe.png "wireframe.png")
 
 ## Installation instructions
 > npm and a postgres DB are required to run this application
