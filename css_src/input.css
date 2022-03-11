@@ -36,15 +36,15 @@
 }
 
 .btn {
-    @apply cursor-pointer focus:outline-none font-medium
+    @apply cursor-pointer focus:outline-none font-medium px-4 py-2 transition duration-300
 }
 
 .btn-sqr {
-    @apply px-4 py-2 rounded-md text-xl transition duration-300
+    @apply rounded-md text-sm
 }
 
 .btn-pill {
-    @apply px-4 py-2 rounded-full text-sm transition duration-300
+    @apply rounded-full text-sm
 }
 
 .btn-pink {
