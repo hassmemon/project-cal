@@ -75,7 +75,8 @@ function renderCreateForm() {
                 .then((response) => {
                     // Is a 2XX response code
                     console.log(response);
-                    renderTaskList();
+                    showPending();
+                    modalDiv.remove();
                 })
                 .catch((error) => {
                     // Is a greater than 2XX response code. E.g. 422, 500 error
