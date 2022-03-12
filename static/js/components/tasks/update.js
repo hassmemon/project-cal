@@ -89,9 +89,6 @@ function displayUpdateForm(task, listType) {
                 .put(`/api/tasks/${task.id}`, body)
                 .then((response) => {
                     // Is a 2XX response code
-                    console.log(response);
-                    // console.log(body);
-                    // console.log(task.id);
                     if (listType === 'pending'){
                         showPending();
                     } else {
@@ -102,7 +99,6 @@ function displayUpdateForm(task, listType) {
                 .catch((error) => {
                     // Is a greater than 2XX response code. E.g. 422, 500 error
                     // Only runs on Error
-                    console.log(error);
                     displayError(error.response.data.message);
                 });
         } else {
