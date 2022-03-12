@@ -1,69 +1,64 @@
-function renderUpdateForm() {
+function renderUpdateForm(id, listType) {
+    axios.get(`/api/tasks/${id}`).then((response) => {
+        const task = response.data;
+        displayUpdateForm(task, listType);
+        console.log(response.data);
+    });
+}
+
+function displayUpdateForm(task, listType) {
     const page = document.getElementById('page');
-    page.innerHTML = `
-<div id="update-task-modal" aria-hidden="true"
-    class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
-    <div class="relative px-4 w-full max-w-md h-full md:h-auto">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            <div class="flex justify-end p-2">
-                <button type="button"
-                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                    data-modal-toggle="update-task-modal">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <form class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" action="#">
-                <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-                <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                        email</label>
-                    <input type="email" name="email" id="email"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                        placeholder="name@company.com" required>
+    const modalDiv = document.createElement('div');
+    modalDiv.classList.add('modal');
+    modalDiv.innerHTML = `
+    <div class="form-container form-trans-solid">
+            <h2 class="text-5xl text-center">Update Task</h2>
+            <form class="mt-3" id="updateTask" action="/api/tasks" method="PUT">
+                <div class="form-row">
+                    <p>Task Name</p>
+                    <input class="form-input" value="${task.name}" type="name" name="name" required/>
                 </div>
-                <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your
-                        password</label>
-                    <input type="password" name="password" id="password" placeholder="••••••••"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                        required>
+                <div class="form-row">
+                    <p>Task Description:</p>
+                    <textarea class="form-input" id="description" name="description" rows="4" required>${task.description}
+                    </textarea>
                 </div>
-                <div class="flex justify-between">
-                    <div class="flex items-start">
-                        <div class="flex items-center h-5">
-                            <input id="remember" aria-describedby="remember" type="checkbox"
-                                class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                                required>
-                        </div>
-                        <div class="ml-3 text-sm">
-                            <label for="remember" class="font-medium text-gray-900 dark:text-gray-300">Remember
-                                me</label>
-                        </div>
-                    </div>
-                    <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                <div class="form-row">
+                    <p>Task Priority</p>
+                    <select class="form-select" name="priority" id="priority">
+                        <option class="bg-light_coral hover:none" value="1" ${task.priority === 1 ? 'selected' : ''}>Urgent</option>
+                        <option class="bg-max_yellow_red" value="2" ${task.priority === 2 ? 'selected' : ''}>Medium</option>
+                        <option class="bg-cg_blue" value="3" ${task.priority === 3 ? 'selected' : ''}>Low</option>
+                    </select>
                 </div>
-                <button type="submit"
-                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
-                    to your account</button>
-                <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create
-                        account</a>
+                <div class="form-row">
+                    <p>Due Date</p>
+                    <input class="form-input" value="${moment(task.due_date).format('YYYY-MM-DD')}" type="date" name="due-date" required/>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-sqr btn-blue" type="submit">Update Task</button>
+                    <button id="updateTaskModalClose" class="btn btn-sqr btn-blue" type="button" >Cancel Update</button>
+                    <button id="deleteButton" class="btn btn-sqr btn-pink" type="button" >Delete Task</button>
                 </div>
             </form>
         </div>
-    </div>
-</div>
     `;
+    page.appendChild(modalDiv);
+
+    const closeUpdateModalBtn = document.querySelector('#updateTaskModalClose');
+    closeUpdateModalBtn.addEventListener('click', (e) => {
+        modalDiv.remove();
+    });
+
+    const deleteButton = document.getElementById('deleteButton');
+    deleteButton.addEventListener('click', () => {
+        deleteTask(task.id, listType);
+        modalDiv.remove();
+    });
 
     const form = document.getElementById('updateTask');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        clearErrors();
 
         const nameField = document.querySelector('input[name=name]');
         const descriptionField = document.querySelector(
@@ -85,22 +80,25 @@ function renderUpdateForm() {
             error = 'Description is required';
         } else if (body.priority === '') {
             error = 'Priority is required';
-        } else if (body.dueDate === '') {
+        } else if (body.priority === 1 && body.dueDate === '') {
             error = 'Due date is required';
         }
 
         if (!error) {
             axios
-                .put('/api/tasks/:id', body)
+                .put(`/api/tasks/${task.id}`, body)
                 .then((response) => {
                     // Is a 2XX response code
-                    console.log(response);
-                    renderTaskList();
+                    if (listType === 'pending'){
+                        showPending();
+                    } else {
+                        showCompleted();
+                    }
+                    modalDiv.remove();
                 })
                 .catch((error) => {
                     // Is a greater than 2XX response code. E.g. 422, 500 error
                     // Only runs on Error
-                    console.log(error);
                     displayError(error.response.data.message);
                 });
         } else {

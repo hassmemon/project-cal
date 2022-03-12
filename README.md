@@ -1,7 +1,7 @@
-# project-cal
+# Laminar
 GA Project 3 - To do list | Planner
 
-See it live [here](https://project-cal.herokuapp.com)
+See it live [here](https://laminar-tasks.herokuapp.com)
 
 ## Description
 The project is a Todo list that tracks pending tasks in a nice visually pleasing Interface.
