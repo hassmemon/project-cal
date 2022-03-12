@@ -1117,7 +1117,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .video-container{
   position: relative;
-  height: 14rem;
+  height: 24rem;
   width: 100%;
 }
 
@@ -1133,9 +1133,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .caption{
   position: relative;
   z-index: 20;
+  padding-right: 1rem;
   text-align: center;
+  text-align: right;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 3.75rem;
+  line-height: 1;
   --tw-text-opacity: 1;
   color: rgb(254 249 239 / var(--tw-text-opacity));
+}
+
+.subcaption{
+  --tw-text-opacity: 1;
+  color: rgb(247 161 200 / var(--tw-text-opacity));
 }
 
 .hover\:bg-gray-200:hover{
