@@ -4,69 +4,81 @@
 @tailwind utilities;
 
 .alert {
-    @apply py-3 pl-5 pr-2 mb-4  text-sm rounded-md border flex items-center justify-evenly z-50 absolute top-10 h-10 w-auto shadow-red-400 shadow-lg
+    @apply py-3 pl-5 pr-2 mb-4  text-sm rounded-md border flex items-center justify-evenly z-50 absolute top-10 h-10 w-auto shadow-red-400 shadow-lg;
 }
 
 .error {
-    @apply bg-red-100 text-red-900 border-red-200
+    @apply bg-red-100 text-red-900 border-red-200;
 }
 
 .modal {
-    @apply fixed z-30 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7] backdrop-blur-sm
+    @apply fixed z-30 inset-0 w-screen h-screen flex justify-center items-center bg-english_violet/[0.7] backdrop-blur-sm;
 }
 
 .form-container {
-    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow shadow-floral_white bg-floral_white/[.10] backdrop-blur-sm
+    @apply border rounded-lg flex flex-col justify-between gap-5 p-4 w-2/4 shadow shadow-floral_white bg-floral_white/[.10] backdrop-blur-sm;
 }
 
 .form-trans-solid {
-    @apply bg-jet/[0.8]
+    @apply bg-jet/[0.8];
 }
 
 .form-row {
-    @apply flex justify-between items-center flex-wrap my-1
+    @apply flex justify-between items-center flex-wrap my-1;
 }
 
 .form-input {
-    @apply text-gray-600 focus:outline-none focus:border focus:border-light_coral font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border
+    @apply text-gray-600 focus:outline-none focus:border focus:border-light_coral font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border;
 }
 
 .form-select {
-    @apply text-gray-600 bg-white focus:outline-none focus:border focus:border-light_coral font-normal h-10 w-full flex items-center pl-3 text-sm border-gray-300 rounded border
+    @apply text-gray-600 bg-white focus:outline-none focus:border focus:border-light_coral font-normal h-10 w-full flex items-center pl-3 text-sm border-gray-300 rounded border;
 }
 
 .btn {
-    @apply cursor-pointer focus:outline-none font-medium px-4 py-2 transition duration-300
+    @apply cursor-pointer focus:outline-none font-medium px-4 py-2 transition duration-300;
 }
 
 .btn-sqr {
-    @apply rounded-md text-sm
+    @apply rounded-md text-sm;
 }
 
 .btn-pill {
-    @apply rounded-full text-sm
+    @apply rounded-full text-sm;
 }
 
 .btn-pink {
-    @apply bg-flickr_pink text-white hover:bg-light_pink hover:text-english_violet
+    @apply bg-flickr_pink text-white hover:bg-light_pink hover:text-english_violet;
 }
 
 .btn-blue {
-    @apply bg-cg_blue text-white hover:bg-cerulean_crayola
+    @apply bg-cg_blue text-white hover:bg-cerulean_crayola;
 }
 
 .btn-yellow {
-    @apply bg-max_yellow_red text-english_violet hover:bg-floral_white
+    @apply bg-max_yellow_red text-english_violet hover:bg-floral_white;
 }
 
 .btn-english_violet {
-    @apply bg-english_violet text-floral_white hover:bg-dark_blue_gray
+    @apply bg-english_violet text-floral_white hover:bg-dark_blue_gray;
 }
 
 .card {
-    @apply border rounded-lg m-1 p-4 shadow-md backdrop-blur-lg
+    @apply border rounded-lg m-1 p-4 shadow-md backdrop-blur-lg;
 }
 
 .card-title {
-    @apply list-none text-xl cursor-pointer mb-2 text-center uppercase font-bold
+    @apply list-none text-xl cursor-pointer mb-2 text-center uppercase font-bold;
+}
+
+.video-container {
+    @apply h-56 w-full relative;
+}
+
+.background-video {
+    @apply h-full w-full object-cover z-0 absolute;
+}
+
+.caption {
+    @apply z-20 relative text-center text-floral_white;
 }
