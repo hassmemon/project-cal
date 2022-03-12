@@ -1,8 +1,12 @@
-function deleteTask(id) {
+function deleteTask(id,listType) {
     axios
         .delete(`/api/tasks/${id}`)
         .then((response) => {
-            renderTaskList();
+            if (listType === 'pending'){
+                showPending();
+            } else {
+                showCompleted();
+            }
         })
         .catch((error) => {
             // Is a greater than 2XX response code. E.g. 422, 500 error

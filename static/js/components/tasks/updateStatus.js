@@ -1,4 +1,4 @@
-function updateStatus() {
+function updateStatus(listType) {
     const allStatusCheckBoxes = document.querySelectorAll('.statusCheckbox');
     allStatusCheckBoxes.forEach((checkbox) => {
         checkbox.addEventListener('change', (event) => {
@@ -10,7 +10,12 @@ function updateStatus() {
             };
             const id = event.target.dataset.taskId;
             axios.patch(`/api/tasks/${id}`, body).then((response) => {
-                renderTaskList();
+                if (listType === 'pending'){
+                    showPending();
+                } else {
+                    showCompleted();
+                }
+
             });
         });
     });
