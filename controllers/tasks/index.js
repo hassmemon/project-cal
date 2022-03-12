@@ -8,7 +8,7 @@ const router = express.Router();
 // Get all tasks
 router.get('/', isLoggedIn, (req, res) => {
     let status = false;
-    if (req.body.status === true) {
+    if (req.query.status) {
         status = true;
     }
     Tasks.getAll(req.session.userId, status).then((tasks) => {
