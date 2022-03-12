@@ -72,7 +72,7 @@
 }
 
 .video-container {
-    @apply h-56 w-full relative;
+    @apply h-96 w-full relative;
 }
 
 .background-video {
@@ -80,5 +80,9 @@
 }
 
 .caption {
-    @apply z-20 relative text-center text-floral_white;
+    @apply z-20 relative text-center text-floral_white font-sans text-6xl text-right pr-4;
+}
+
+.subcaption {
+    @apply text-light_pink;
 }
