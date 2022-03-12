@@ -1,29 +1,4 @@
-function renderTaskList() {
-    const page = document.getElementById('page');
-    const list = document.createElement('div');
-    list.classList.add('w-2/3');
-    page.replaceChildren(list);
-    list.innerHTML=`
-        <h2 class="text-3xl text-center">My Tasks!</h2>
-        <button class="btn btn-pill btn-yellow mb-4" id="newTask" onClick="renderCreateForm()">
-            <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                </svg> 
-                <span class="ml-2">New</span>
-        </button>
-    `;
-
-    axios.get('/api/tasks').then((response) => {
-        const tasks = response.data;
-        const unorderedList = document.createElement('ul');
-        renderData(tasks, unorderedList);
-        list.appendChild(unorderedList);
-        updateStatus();
-    });
-}
-
-function renderData(tasks, parentList) {
+function renderData(tasks, parentList, listtype) {
     tasks.forEach((item) => {
         const listItem = document.createElement('li');
         const itemDiv = document.createElement('div');
@@ -43,10 +18,10 @@ function renderData(tasks, parentList) {
 
         const infoContainer = document.createElement('div');
         infoContainer.classList.add('flex', 'flex-col', 'items-center');
-        
+
         const taskDetails = document.createElement('div');
         taskDetails.classList.add('w-full');
-        
+
         const description = document.createElement('p');
         description.innerHTML = `${item.description}`;
         const dueDate = document.createElement('p');
@@ -62,6 +37,9 @@ function renderData(tasks, parentList) {
         }
         const updateBtn = document.createElement('button');
         updateBtn.setAttribute('data-task-id', `${item.id}`);
+        updateBtn.addEventListener('click', (e)=>{
+            renderUpdateForm(item.id, listtype);
+        });
         updateBtn.classList.add('updateTaskBtn', 'btn', 'btn-pill', 'btn-english_violet', 'text-center')
         updateBtn.innerHTML = `Update`;
         details.appendChild(summary);

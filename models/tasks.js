@@ -3,7 +3,8 @@ const db = require('../database/db');
 
 const Tasks = {
     getAll: (user_id, completed = false) => {
-        const query = 'SELECT * FROM tasks WHERE user_id = $1 AND status = $2 order by priority asc';
+        const query =
+            'SELECT * FROM tasks WHERE user_id = $1 AND status = $2 order by priority asc';
         return db.query(query, [user_id, completed]).then((response) => {
             return response.rows;
         });
@@ -35,6 +36,7 @@ const Tasks = {
     },
     update: ({ id, name, description, priority, dueDate, user_id }) => {
         const query = `UPDATE tasks SET name = $2, description = $3, priority = $4, due_date = $5  WHERE id = $1 and user_id = $6 RETURNING *`;
+
         return db
             .query(query, [id, name, description, priority, dueDate, user_id])
             .then((response) => {

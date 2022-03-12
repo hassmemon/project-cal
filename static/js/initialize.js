@@ -14,7 +14,7 @@ function renderAppWithSession() {
     getSession().then((session) => {
         console.log(`I have a ${session}`);
         renderHeader(session);
-        renderTaskList();
+        renderTaskHeader();
     }).catch((error)=>{
         console.log(`${error}`);
     });
