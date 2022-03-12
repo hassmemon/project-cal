@@ -20,9 +20,11 @@ router.post('/', (req, res) => {
             if (valid) {
                 req.session.userId = user.id;
                 req.session.email = user.email;
+                req.session.name = user.name;
                 res.json({
                     userId: user.id,
                     email: email,
+
                 }); // send the session info (but only as much as is relevant/necessary);
             } else {
                 incorrectResponse(res);
@@ -39,6 +41,7 @@ router.get('/', (req, res) => {
         res.json({
             userId: req.session.userId,
             email: req.session.email,
+            name: req.session.name,
         });
     } else {
         // 401 - Unauthorized
