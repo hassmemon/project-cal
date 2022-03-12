@@ -11,7 +11,7 @@ function renderHeader(session = {}) {
     if (session.email) {
         header.innerHTML += `
         <div class="flex w-full justify-evenly items-center mt-6 mb-4 " id="navlist" >
-            <p>Welcome, <span class="text-max_yellow_red">${session.email}.</span></p>
+            <p>Welcome, <span class="text-max_yellow_red">${session.name}.</span></p>
             <span class="btn btn-pill btn-pink" onClick="logout()">Logout</span>
         </div>
         `;
