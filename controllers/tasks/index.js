@@ -37,7 +37,7 @@ router.patch('/:id', isLoggedIn, statusValidator, (req, res) => {
 // Create a task
 router.post('/', isLoggedIn, taskValidator, (req, res) => {
     const newTask = req.body;
-    if (newTask.dueDate === "") {
+    if (newTask.dueDate === '') {
         newTask.dueDate = null;
     }
     newTask.user_id = req.session.userId;
@@ -61,11 +61,14 @@ router.delete('/:id', isLoggedIn, (req, res) => {
 // Update a task
 router.put('/:id', isLoggedIn, taskValidator, (req, res) => {
     const updateTask = req.body;
-    if (updateTask.dueDate === "") {
+    if (updateTask.dueDate === '') {
         updateTask.dueDate = null;
     }
+    updateTask['id'] = req.params.id;
+    console.log(updateTask);
     updateTask.user_id = req.session.userId;
     Tasks.update(updateTask).then((task) => {
+        console.log(task);
         res.json(task);
     });
 });
