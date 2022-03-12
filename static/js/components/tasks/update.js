@@ -51,6 +51,7 @@ function displayUpdateForm(task) {
                 <div class="text-center mt-3">
                     <button class="btn btn-sqr btn-blue" type="submit">Update Task</button>
                     <button id="updateTaskModalClose" class="btn btn-sqr btn-blue" type="button" >Cancel Update</button>
+                    <button id="deleteButton" class="btn btn-sqr btn-pink" type="button" >Delete Task</button>
                 </div>
             </form>
         </div>
@@ -60,6 +61,11 @@ function displayUpdateForm(task) {
     const closeUpdateModalBtn = document.querySelector('#updateTaskModalClose');
     closeUpdateModalBtn.addEventListener('click', (e) => {
         modalDiv.remove();
+    });
+
+    const deleteButton = document.getElementById('deleteButton');
+    deleteButton.addEventListener('click', () => {
+        deleteTask(task.id);
     });
 
     const form = document.getElementById('updateTask');

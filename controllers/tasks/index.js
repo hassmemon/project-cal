@@ -65,10 +65,8 @@ router.put('/:id', isLoggedIn, taskValidator, (req, res) => {
         updateTask.dueDate = null;
     }
     updateTask['id'] = req.params.id;
-    console.log(updateTask);
     updateTask.user_id = req.session.userId;
     Tasks.update(updateTask).then((task) => {
-        console.log(task);
         res.json(task);
     });
 });
