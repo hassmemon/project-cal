@@ -1,4 +1,4 @@
-# Laminar
+# Laminar Task Manager
 GA Project 3 - To do list | Planner
 
 See it live [here](https://laminar-tasks.herokuapp.com)
